@@ -1,13 +1,18 @@
 \documentclass[linespread=1.5]{ctexbook}
 
+\renewenvironment{quotation}{
+	\par
+	%\setlength{\leftskip}{4em}
+	\setlength{\parindent}{2em}
+	\hangafter 0
+	\setlength{\hangindent}{2em}
+	\kaishu
+}{\newline}
+
 \usepackage[margin=2cm]{geometry}
 \usepackage{mdwlist}
 
-\renewenvironment{quotation}{
-	\newline 
-	\setlength\parindent{4em}
-	\kaishu
-}{\newline}
+
 
 \usepackage{graphicx}
 
