@@ -1,5 +1,7 @@
 \documentclass[lang=cn, 11pt]{elegantbook}
 
+\usepackage{ctex}
+
 \renewenvironment{quotation}{
 	\par
 %	\noindent
@@ -10,7 +12,9 @@
 	\kaishu
 }{\newline \noindent}
 
-\usepackage{mdwlist}
+% \usepackage{mdwlist}
+
+\setcounter{tocdepth}{3}
 
 \usepackage{graphicx}
 \usepackage{longtable}
@@ -21,7 +25,13 @@
 \title{阅读、电影中的想法}
 \subtitle{我的阅读和观影思考}
 \author{北方以北}
+\institute{北京邮电大学}
 \date{\today}
+
+\version{0.1}
+\extrainfo{陈平：读万卷书，行万里路，会百家才。}
+\logo{logo.png}
+\cover{cover.jpg}
 
 \begin{document}
 
@@ -30,5 +40,6 @@
 \tableofcontents
 
 \input{mainmatter.tex}
+\hypersetup{pageanchor=true}
 
 \end{document}
