@@ -1,0 +1,31 @@
+\subsection{《编写高质量代码：改善Python程序的91个建议》}
+
+作者：张颖 \ 赖勇浩
+
+\subsubsection{笔记}
+1. 需要安全地关闭文件，可以使用with语句：
+\lstset{
+language=Python,
+keywordstyle=\bfseries,
+stringstyle=\ttfamily,
+numbers=left,
+numberstyle=\small,
+stepnumber=1
+}
+\begin{lstlisting}
+with open(path, 'r') as f:
+	do_sth_with(f)
+\end{lstlisting}
+
+2. 通常禁止断言的方法是在运行脚本的时候加上-O标志。
+
+3. 如果对于or条件表达式应该将值为真可能性较主的变量写在or的前面，而and则应该推后。
+
+4. 函数参数在传递过程中将整个对象传入，对可变对象的修改在函数外部以及内部都可见，调用者和被调用者之间共享这个对象，而对于不可变对象，由于并不能真正地修改，因此，修改往往是通过生成一个新对象然后赋值来实现的。
+
+\subsubsection{书评}
+这本书是Python的中级应用，主要聚集在内部语言机制和一些使用上的技七和“坑”，对于平时用的比较多的用户而言是值得一看的。某些机制似乎只出现在Python2中，在Python3的新的底层实现上能否可用还存疑。本书的内容大概在2013年之前，随着Python2被取代以及Python3的流行，某些内容可能已经过时了。
+
+对于那些语言上的“坑”，平时在编程过程中就应当少涉及，一是可读性不好，二是可移植性差。
+
+评分：3/5。
