@@ -1,0 +1,56 @@
+\subsection{《Python统计分析》}
+
+作者：【奥】Thomas Haslwanter
+
+单变量分布
+
+\begin{table}[htpb]
+\centering
+\caption{单变量分布含义及对应的函数}
+\begin{tabular}{r|l|p{0.5\textwidth}}
+
+统计量  &  含义  &  计算方法 \\
+\hline 
+均值  &    & \verb | np.mean() | \\
+中位数  &    &  \verb | np.median() |\\ 
+众数  &  出现最频繁的数  &  \verb | scipy.stats.mode(data) | \\
+几何平均值  &   &  \verb | scipy.stats.gmean(data) |\\ 
+极差  &  最大值与最小值的差  &  \verb | np.ptp() | \\
+百分位数  &  低于数据中特定百分比的数据的值  &  \\
+标准差  &   &  \verb | np.std(data, ddof=1) |，为无偏估计（分母为n-1），否则为有偏估计（分母为n） \\
+标准误  &  $SEM=\frac{s}{\sqrt{n}}$  &  \\
+置信区间  &  包含参数真实值的范围  & \\
+
+\end{tabular}
+
+\end{table}
+
+离散分布：
+\begin{itemize*}
+    \item 伯努利分布：$p_{head} + p_{tails} = 1$，产生方法：\verb | bernoulliDist = stats.bernoulli(p) |
+    \item 二项分布：多次独立实验，产生方法：\verb | binomDist = stats.binom(num, p) |
+    \item 泊松分布：$P(X=k)=\frac{\exp{(-\lambda)}{\lambda}^k}{k!}$
+    \item 正态分布，产生方法：\verb | dist = stats.norm(mu, sigma) |
+\end{itemize*}
+
+假设检验：通常从一个无效的假设开始，根据问题和数据，然而选择适当的统计检验以及期望的显著性水平，然后要么接受检验，要么拒绝无效假设。
+
+回归模型：选择数据可能的统计模型。
+
+贝叶斯统计学：
+\begin{itemize*}
+    \item 频率学派：给定一个模型，找到所观察到的数据集的可能性。
+    \item 贝叶斯学派：将观察到的数据固定下来，观察找到的特定模型参数的可能性。
+\end{itemize*}
+
+
+贝叶斯概率的形式：
+$$P(A|B)=\frac{P(B|A) \times P(A)}{P(B)}$$
+其中：
+\begin{itemize*}
+    \item $P(A)$为先验概率，是对A最初的置信度
+    \item $P(A|B)$后验概率，是考虑了B之后的置信度，意为在B的情况下，A的概率
+    \item 商值$P(B|A)/P(B)$表示B为A提供的支持
+
+
+\end{itemize*}
