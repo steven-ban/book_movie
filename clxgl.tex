@@ -1,0 +1,116 @@
+\subsection{《测绘学概论》}
+
+作者：宁津生 \ 陈俊勇 \ 李德仁  \ 刘经南 \ 张祖勋 \ 龚健雅 \ 等
+
+出版社：武汉大学出版社
+
+\subsubsection{第1章 \ 总论}
+
+
+
+学科分类：
+\begin{itemize*}
+    \item 大地测量学
+    \item 摄影测量学。包括：
+    \begin{itemize*}
+        \item 航空摄影
+        \item 航空摄影测量
+        \item 地面摄影测量（近景摄影测量）
+        \item ……
+    \end{itemize*}
+    \item 地图制图学（地图学）
+    \item 工程测量学
+    \item 海洋测绘学
+\end{itemize*}
+
+
+测绘学的新技术发展：
+\begin{itemize*}
+    \item 全球卫星导航系统GNSS（Global Navigation Satellite System）：同时接收三颗卫星以上的信号，根据传播时间，求取距离，并进而得到测量点的坐标。
+    \item 航空遥感技术RS（Remote Sensing）
+    \item 数字地图制图技术（Digital Cartography）
+    \item 地理信息系统技术GIS（Geographic Information System）
+    \item 3S集成技术（Integration of GPS, RS and GIS technology）
+    \item 卫星重力探测技术（Satellite Gravimetry）
+    \item 虚拟现实模型技术（Virtual Reality Technology）
+\end{itemize*}
+
+
+\subsubsection{第2章 \ 大地测量学}
+
+大地测量坐标系：空间直角坐标系、大地坐标（经度L、纬度B、大地高H，其中大地高为空间点沿椭球面法线方向高出椭球面的距离）、球坐标系。
+
+我国历史上采用的坐标系：北京1954（大地）坐标系统、西安1980坐标系统。
+
+大地测量基本常数：
+\begin{itemize*}
+    \item 地球赤道半径
+    \item 地心引力常数GM，G为万有引力常数，M是地球的陆海空质量的总和。
+    \item 地球动力学形状因子$J_2$
+    \item 地球自转角速度$\omega$
+\end{itemize*}
+
+其他的大地测量导出常数可以从上面几个常数上推导出来。
+
+\subsubsection{第3章 \ 摄影测量学}
+
+摄影测量学是通过测量两张以上的像点坐标$(x_1, y_1; x_2, y_2; \ldots)$求得该点的空间坐标$(X, Y, Z)$的科学与技术。
+
+不同影像上的量测的点必须对应于空间同一个点，称为\emph{同名点（或同名点对）}。因此量测两张以上影像的像点坐标是同名点对，是摄影测量首要的基本问题。识别同名点的核心是模式识别，最简单的方法是模板匹配。
+
+确定像点坐标与空间点坐标之间的几何关系——三点共线方程。设物点坐标$(X, Y, Z)$，像点坐标$(x, y)$，摄影 中心坐标$(X_S, Y_S, Z_S)$，则方程为
+\begin{equation}
+    \left \{ \begin{aligned}
+    x-x_0 & = & -f \frac{a_1 \cdot (X-X_S) + b_1 \cdot (Y-Y_S) + c_1 \cdot (Z-Z_S)}{a_3 \cdot (X-X_S) + b_3 \cdot (Y-Y_S), + c_3 \cdot (Z-Z_S)}  \\
+    y-y_0 & =  &-f \frac{a_2 \cdot (X-X_S) + b_2 \cdot (Y-Y_S) + c_2 \cdot (Z-Z_S)}{a_3 \cdot (X-X_S) + b_3 \cdot (Y-Y_S), + c_3 \cdot (Z-Z_S)} \end{aligned}
+    \right .  
+\end{equation}
+
+摄影机的内方位元素$f, x_0, y_0$。
+
+摄影机的外方位元素$X_S, Y_S, Z_S, \varphi, \omega, \kappa$，共同组成了摄影机在摄影瞬间的空间方位。
+
+内外方位元素的确定。需要进行标定，一般内方位元素出厂即确定，外方位元素可通过\emph{空间后方交会法}确定，利用地面上至少三个已知点与影像上三个对应的影像点，进行解算。该方法工作量较大，因此实际中采用\emph{空中三角测量}来确定：
+\begin{itemize*}
+    \item 相对定向，用于确定两张影像的相对位置。无需外业控制点，只能确定一个一个的立体模型。
+    \item 模型连接
+    \item 空中三角测量，把一张一张的影像连接起来
+    \item 区域网平差，用最小二乘法使测量误差的平方和最小，即$\Sigma v_i \cdot v_i = \mathrm{min}$
+    \item GPS/IMU（POS）空中三角测量，可直接测定摄影机的空间位置与姿态
+\end{itemize*}
+
+
+\emph{数字地面模型（DEM）}，将地面划分成等间隔格网（矩形、三角形等）。
+
+激光雷达（LiDAR），可高效产生DEM、DSM、DOM、DLG。
+
+\subsubsection{第5章 \ 工程测量学}
+
+控制网
+
+测量误差
+
+变形预报方法：
+\begin{itemize*}
+    \item 回归分析法
+    \item 有限元法
+    \item 时间序列分析法
+    \item 卡尔曼滤波法
+    \item 人工神经网络法
+    \item 系统论方法
+\end{itemize*}
+
+
+\subsubsection{第10章 \ 测量数据处理（测量平差）}
+
+测量平差：依据某种最优化准则，由一系列带有观测误差的观测值求定未知量的最优估值及其精度的数据处理理论和方法。
+
+多余观测原则：观测值的个数必须多于未知量的个数。
+
+测量平差中的模型称为平差模型，由函数模型和随机模型组成。
+
+用最小二乘法求最优估值的两个要求：
+\begin{itemize*}
+    \item 只用一组改正数$v_i, i=1,2,\ldots,n$消除不符值
+    \item 在同精度观测的情况下，改正数$v_i$应满足：$\Sigma_{i=1}^n v_i^2 = \mathrm{min}$，在不同的观测精度下，则应满足：$\Sigma_{i=1}^n P_i v_i^2 = \mathrm{min}$
+\end{itemize*}
